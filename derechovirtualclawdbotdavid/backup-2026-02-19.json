@@ -1,6 +1,6 @@
 {
   "botId": "derechovirtualclawdbotdavid",
-  "timestamp": "2026-02-19T04:59:33.290Z",
+  "timestamp": "2026-02-19T05:00:03.964Z",
   "source": "openclaw-cron-backup",
   "jobs": {
     "version": 1,
@@ -79,7 +79,8 @@
           "text": "🔐 BACKUP AUTOMATIZACIONES: Ejecuta el script de backup de cron jobs a GitHub. Corre: node /home/node/openclaw/scripts/backup-automatizaciones.js y reporta el resultado brevemente."
         },
         "state": {
-          "nextRunAtMs": 1771477200000
+          "nextRunAtMs": 1771477200000,
+          "runningAtMs": 1771477200005
         }
       }
     ]
