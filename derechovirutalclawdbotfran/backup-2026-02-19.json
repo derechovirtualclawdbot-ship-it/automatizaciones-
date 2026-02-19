@@ -1,6 +1,6 @@
 {
   "botId": "derechovirutalclawdbotfran",
-  "timestamp": "2026-02-19T05:15:50.454Z",
+  "timestamp": "2026-02-19T06:00:02.805Z",
   "source": "openclaw-cron-backup",
   "jobs": {
     "version": 1,
@@ -25,7 +25,8 @@
           "text": "🔐 BACKUP AUTOMATIZACIONES FRAN: Ejecuta el script de backup de cron jobs a GitHub. Corre: node /data/.openclaw/workspace/scripts/backup-fran.js y reporta el resultado brevemente."
         },
         "state": {
-          "nextRunAtMs": 1771480800000
+          "nextRunAtMs": 1771480800000,
+          "runningAtMs": 1771480800003
         }
       }
     ]
