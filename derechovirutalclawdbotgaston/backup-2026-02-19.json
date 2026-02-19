@@ -1,6 +1,6 @@
 {
   "botId": "derechovirutalclawdbotgaston",
-  "timestamp": "2026-02-19T05:05:00.000Z",
+  "timestamp": "2026-02-19T12:00:00.000Z",
   "source": "openclaw-cron-backup",
   "jobs": {
     "version": 1,
@@ -39,27 +39,30 @@
       {
         "id": "fc310339-e9c9-4555-bf82-4f3ecc4f64df",
         "agentId": "main",
+        "sessionKey": "agent:main:main",
         "name": "backup-automatizaciones-12h",
         "enabled": true,
         "createdAtMs": 1771477378133,
-        "updatedAtMs": 1771477440228,
+        "updatedAtMs": 1771477624808,
         "schedule": {
           "kind": "cron",
           "expr": "0 */12 * * *",
-          "tz": "UTC"
+          "tz": "UTC",
+          "staggerMs": 300000
         },
         "sessionTarget": "isolated",
         "wakeMode": "now",
         "payload": {
           "kind": "agentTurn",
-          "message": "Backup de automatizaciones cada 12h → GitHub repo automatizaciones-",
+          "message": "Tarea de backup de automatizaciones cada 12h:\n\n1. Usa la herramienta `cron` con action=list e includeDisabled=true para obtener todos los jobs actuales.\n2. Construye un JSON con el formato:\n   - botId: 'derechovirutalclawdbotgaston'\n   - timestamp: fecha/hora actual ISO 8601\n   - source: 'openclaw-cron-backup'\n   - jobs: { version: 1, jobs: [...] }\n3. Guarda ese JSON en dos archivos:\n   - `/tmp/automatizaciones-backup/derechovirutalclawdbotgaston/latest.json`\n   - `/tmp/automatizaciones-backup/derechovirutalclawdbotgaston/backup-YYYY-MM-DD.json` (con la fecha real)\n4. Actualiza la tabla del archivo `backup-log.md` en esa misma carpeta con una nueva fila de log.\n5. Ejecuta:\n   - `cd /tmp/automatizaciones-backup`\n   - `git remote set-url origin https://[REDACTED]@github.com/derechovirtualclawdbot-ship-it/automatizaciones-`\n   - `git add derechovirutalclawdbotgaston/`\n   - `git commit -m 'backup: derechovirutalclawdbotgaston FECHA'`\n   - `git push origin main`\n6. Reporta si el backup fue exitoso o si hubo algún error.",
           "timeoutSeconds": 300
-        },
-        "state": {
-          "nextRunAtMs": 1771502423362
         },
         "delivery": {
           "mode": "announce"
+        },
+        "state": {
+          "nextRunAtMs": 1771502423362,
+          "runningAtMs": 1771502423375
         }
       }
     ]
