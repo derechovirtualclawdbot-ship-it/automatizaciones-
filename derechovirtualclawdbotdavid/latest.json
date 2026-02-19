@@ -1,6 +1,6 @@
 {
-  "botId": "derechovirtualclawdbot",
-  "timestamp": "2026-02-19T04:57:55.440Z",
+  "botId": "derechovirtualclawdbotdavid",
+  "timestamp": "2026-02-19T04:59:33.290Z",
   "source": "openclaw-cron-backup",
   "jobs": {
     "version": 1,
@@ -57,6 +57,29 @@
           "lastStatus": "ok",
           "lastDurationMs": 9,
           "consecutiveErrors": 0
+        }
+      },
+      {
+        "id": "1f31cd6c-d92c-4010-bf6c-c80dc58f472e",
+        "agentId": "main",
+        "sessionKey": "agent:main:main",
+        "name": "Backup Automatizaciones → GitHub",
+        "enabled": true,
+        "createdAtMs": 1771477083473,
+        "updatedAtMs": 1771477083473,
+        "schedule": {
+          "kind": "cron",
+          "expr": "0 6,18 * * *",
+          "tz": "Europe/Madrid"
+        },
+        "sessionTarget": "main",
+        "wakeMode": "now",
+        "payload": {
+          "kind": "systemEvent",
+          "text": "🔐 BACKUP AUTOMATIZACIONES: Ejecuta el script de backup de cron jobs a GitHub. Corre: node /home/node/openclaw/scripts/backup-automatizaciones.js y reporta el resultado brevemente."
+        },
+        "state": {
+          "nextRunAtMs": 1771477200000
         }
       }
     ]
