@@ -1,17 +1,42 @@
 {
   "botId": "derechovirutalclawdbotabel",
-  "timestamp": "2026-02-19T05:09:00.000Z",
+  "timestamp": "2026-02-19T11:04:22.000Z",
   "source": "openclaw-cron-backup",
   "jobs": {
     "version": 1,
     "jobs": [
+      {
+        "id": "935a51a9-8c88-47b0-9aea-166148bbdb3b",
+        "agentId": "main",
+        "sessionKey": "agent:main:main",
+        "name": "Backup Automatizaciones Abel (cada 12h)",
+        "enabled": true,
+        "createdAtMs": 1771477860172,
+        "updatedAtMs": 1771477860172,
+        "schedule": {
+          "kind": "cron",
+          "expr": "0 */12 * * *",
+          "tz": "Europe/Madrid",
+          "staggerMs": 300000
+        },
+        "sessionTarget": "main",
+        "wakeMode": "now",
+        "payload": {
+          "kind": "systemEvent",
+          "text": "🔄 BACKUP AUTOMATIZACIONES: Haz backup de las automatizaciones en GitHub. Pasos: 1) Obtén la lista de cron jobs con la herramienta cron (action=list, includeDisabled=true). 2) Guarda el JSON en /home/node/openclaw/temp/automatizaciones/derechovirutalclawdbotabel/latest.json con el formato {botId, timestamp, source, jobs:{version:1,jobs:[...]}}. 3) Copia como backup-YYYY-MM-DD.json. 4) Añade línea al backup-log.md. 5) Ejecuta: cd /home/node/openclaw/temp/automatizaciones && git pull origin main --rebase && git add derechovirutalclawdbotabel/ && git diff --cached --quiet || git commit -m 'backup: derechovirutalclawdbotabel — <timestamp>' && git push origin main. Token ya configurado en remote. Confirma con '✅ Backup completado'."
+        },
+        "state": {
+          "nextRunAtMs": 1771499062566,
+          "lastRunAtMs": 1771499062570
+        }
+      },
       {
         "id": "ef59a474-073d-4c36-8571-3581ed2f99e2",
         "agentId": "main",
         "name": "Sync Skills (Pull)",
         "enabled": true,
         "createdAtMs": 1771127734176,
-        "updatedAtMs": 1771477434314,
+        "updatedAtMs": 1771499038700,
         "schedule": {
           "kind": "cron",
           "expr": "0 */6 * * *",
@@ -25,10 +50,10 @@
           "text": "🔄 SYNC SKILLS: Sincroniza skills y credenciales del repo compartido. Ejecuta: cd /home/node/openclaw/sync-repo && git pull origin main && node /home/node/openclaw/scripts/sync-skills.js. Reporta brevemente cuántas skills hay."
         },
         "state": {
-          "nextRunAtMs": 1771499023936,
-          "lastRunAtMs": 1771477423937,
+          "nextRunAtMs": 1771520623936,
+          "lastRunAtMs": 1771499023941,
           "lastStatus": "ok",
-          "lastDurationMs": 10377,
+          "lastDurationMs": 14759,
           "consecutiveErrors": 0
         }
       }
