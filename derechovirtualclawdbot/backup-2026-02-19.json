@@ -1,9 +1,8 @@
 {
   "botId": "derechovirtualclawdbot",
-  "timestamp": "2026-02-19T04:56:42.379Z",
+  "timestamp": "2026-02-19T04:57:33.543Z",
   "source": "openclaw-cron-backup",
   "jobs": {
-    "note": "API no disponible en el momento del backup",
-    "timestamp": "2026-02-19T04:56:42.378Z"
+    "raw": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>OpenClaw Control</title>\n    <meta name=\"color-scheme\" content=\"dark light\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"./favicon.svg\" />\n    <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"./favicon-32.png\" />\n    <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"./apple-touch-icon.png\" />\n    <script type=\"module\" crossorigin src=\"./assets/index-y8WCJEWp.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"./assets/index-C3ge7plv.css\">\n  </head>\n  <body>\n    <openclaw-app></openclaw-app>\n  </body>\n</html>\n"
   }
 }
