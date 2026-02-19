@@ -1,0 +1,67 @@
+{
+  "botId": "derechovirutalclawdbotgaston",
+  "timestamp": "2026-02-19T05:05:00.000Z",
+  "source": "openclaw-cron-backup",
+  "jobs": {
+    "version": 1,
+    "jobs": [
+      {
+        "id": "c940daba-8d3a-4c5b-9cc7-8104f70a1bc0",
+        "agentId": "main",
+        "name": "sync-skills-8h",
+        "enabled": false,
+        "createdAtMs": 1770268802035,
+        "updatedAtMs": 1770911908153,
+        "schedule": {
+          "kind": "cron",
+          "expr": "0 */8 * * *",
+          "tz": "UTC",
+          "staggerMs": 300000
+        },
+        "sessionTarget": "isolated",
+        "wakeMode": "next-heartbeat",
+        "payload": {
+          "kind": "agentTurn",
+          "message": "Ejecuta la sincronización de skills con los otros agentes: cd /app/skills/google && node scripts/sync-skills.js. Reporta brevemente el resultado.",
+          "timeoutSeconds": 300
+        },
+        "state": {
+          "lastRunAtMs": 1770883200005,
+          "lastStatus": "error",
+          "lastDurationMs": 16668,
+          "consecutiveErrors": 3,
+          "lastError": "cron delivery target is missing"
+        },
+        "delivery": {
+          "mode": "announce"
+        }
+      },
+      {
+        "id": "fc310339-e9c9-4555-bf82-4f3ecc4f64df",
+        "agentId": "main",
+        "name": "backup-automatizaciones-12h",
+        "enabled": true,
+        "createdAtMs": 1771477378133,
+        "updatedAtMs": 1771477440228,
+        "schedule": {
+          "kind": "cron",
+          "expr": "0 */12 * * *",
+          "tz": "UTC"
+        },
+        "sessionTarget": "isolated",
+        "wakeMode": "now",
+        "payload": {
+          "kind": "agentTurn",
+          "message": "Backup de automatizaciones cada 12h → GitHub repo automatizaciones-",
+          "timeoutSeconds": 300
+        },
+        "state": {
+          "nextRunAtMs": 1771502423362
+        },
+        "delivery": {
+          "mode": "announce"
+        }
+      }
+    ]
+  }
+}
