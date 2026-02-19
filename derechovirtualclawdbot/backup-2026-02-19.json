@@ -1,8 +1,64 @@
 {
   "botId": "derechovirtualclawdbot",
-  "timestamp": "2026-02-19T04:57:33.543Z",
+  "timestamp": "2026-02-19T04:57:55.440Z",
   "source": "openclaw-cron-backup",
   "jobs": {
-    "raw": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>OpenClaw Control</title>\n    <meta name=\"color-scheme\" content=\"dark light\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"./favicon.svg\" />\n    <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"./favicon-32.png\" />\n    <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"./apple-touch-icon.png\" />\n    <script type=\"module\" crossorigin src=\"./assets/index-y8WCJEWp.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"./assets/index-C3ge7plv.css\">\n  </head>\n  <body>\n    <openclaw-app></openclaw-app>\n  </body>\n</html>\n"
+    "version": 1,
+    "jobs": [
+      {
+        "id": "881a097f-54f5-42ec-b4c1-1de7a4b6c3c8",
+        "agentId": "main",
+        "name": "Expandir skill directo-al-examen",
+        "enabled": false,
+        "createdAtMs": 1770234669224,
+        "updatedAtMs": 1770234669239,
+        "schedule": {
+          "kind": "at",
+          "at": "2025-02-04T23:00:00.000Z"
+        },
+        "sessionTarget": "isolated",
+        "wakeMode": "next-heartbeat",
+        "payload": {
+          "kind": "agentTurn",
+          "message": "TAREA NOCTURNA: Expandir la skill directo-al-examen al máximo.\n\n1. Lee TODOS los manuales de Drive (34 PDFs)\n2. Estudia patrones, estructuras, artículos más citados\n3. Mejora el prompt de análisis con más detalle\n4. Añade plantillas específicas por rama (Civil, Penal, Constitucional, etc.)\n5. Crea banco de preguntas tipo test por materia\n6. Documenta jurisprudencia clave (STS, STC)\n7. Actualiza SKILL.md con todo lo aprendido\n\nTrabaja hasta las 04:00. Guarda progreso en memory/skill-expansion-log.md",
+          "timeoutSeconds": 14400
+        },
+        "state": {
+          "lastRunAtMs": 1770234669239,
+          "lastStatus": "ok",
+          "lastDurationMs": 962267
+        },
+        "delivery": {
+          "mode": "announce"
+        }
+      },
+      {
+        "id": "7b8e423b-a8ea-4ce1-821f-60c90f542ff5",
+        "agentId": "main",
+        "name": "Sync Skills (Pull)",
+        "enabled": true,
+        "createdAtMs": 1771126511666,
+        "updatedAtMs": 1771455779164,
+        "schedule": {
+          "kind": "cron",
+          "expr": "0 */6 * * *",
+          "tz": "Europe/Madrid",
+          "staggerMs": 300000
+        },
+        "sessionTarget": "main",
+        "wakeMode": "next-heartbeat",
+        "payload": {
+          "kind": "systemEvent",
+          "text": "🔄 SKILL SYNC: Ejecuta el script de sincronización de skills con los otros agentes. Corre: node /home/node/openclaw/scripts/sync-skills.js y reporta el resultado."
+        },
+        "state": {
+          "nextRunAtMs": 1771477379153,
+          "lastRunAtMs": 1771455779155,
+          "lastStatus": "ok",
+          "lastDurationMs": 9,
+          "consecutiveErrors": 0
+        }
+      }
+    ]
   }
 }
