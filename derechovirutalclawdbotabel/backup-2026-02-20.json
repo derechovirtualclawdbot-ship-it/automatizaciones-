@@ -1,6 +1,6 @@
 {
   "botId": "derechovirutalclawdbotabel",
-  "timestamp": "2026-02-20T11:04:22Z",
+  "timestamp": "2026-02-20T23:04:22Z",
   "source": "cron-backup-automatico",
   "jobs": {
     "version": 1,
@@ -12,7 +12,7 @@
         "name": "Backup Automatizaciones Abel (cada 12h)",
         "enabled": true,
         "createdAtMs": 1771477860172,
-        "updatedAtMs": 1771542287034,
+        "updatedAtMs": 1771585496530,
         "schedule": {
           "kind": "cron",
           "expr": "0 */12 * * *",
@@ -24,13 +24,6 @@
         "payload": {
           "kind": "systemEvent",
           "text": "🔄 BACKUP AUTOMATIZACIONES: Haz backup de las automatizaciones en GitHub. Pasos: 1) Obtén la lista de cron jobs con la herramienta cron (action=list, includeDisabled=true). 2) Guarda el JSON en /home/node/openclaw/temp/automatizaciones/derechovirutalclawdbotabel/latest.json con el formato {botId, timestamp, source, jobs:{version:1,jobs:[...]}}. 3) Copia como backup-YYYY-MM-DD.json. 4) Añade línea al backup-log.md. 5) Ejecuta: cd /home/node/openclaw/temp/automatizaciones && git pull origin main --rebase && git add derechovirutalclawdbotabel/ && git diff --cached --quiet || git commit -m 'backup: derechovirutalclawdbotabel — <timestamp>' && git push origin main. Token ya configurado en remote. Confirma con '✅ Backup completado'."
-        },
-        "state": {
-          "nextRunAtMs": 1771585462566,
-          "lastRunAtMs": 1771542262570,
-          "lastStatus": "ok",
-          "lastDurationMs": 24464,
-          "consecutiveErrors": 0
         }
       },
       {
@@ -39,7 +32,7 @@
         "name": "Sync Skills (Pull)",
         "enabled": true,
         "createdAtMs": 1771127734176,
-        "updatedAtMs": 1771585440652,
+        "updatedAtMs": 1771628634102,
         "schedule": {
           "kind": "cron",
           "expr": "0 */6 * * *",
@@ -51,13 +44,26 @@
         "payload": {
           "kind": "systemEvent",
           "text": "🔄 SYNC SKILLS: Sincroniza skills y credenciales del repo compartido. Ejecuta: cd /home/node/openclaw/sync-repo && git pull origin main && node /home/node/openclaw/scripts/sync-skills.js. Reporta brevemente cuántas skills hay."
+        }
+      },
+      {
+        "id": "3f4e8da9-eb4f-4182-95de-722a5f06637c",
+        "agentId": "main",
+        "sessionKey": "agent:main:main",
+        "name": "Recordatorio burofax Adrián",
+        "enabled": true,
+        "deleteAfterRun": true,
+        "createdAtMs": 1771624661437,
+        "updatedAtMs": 1771624661437,
+        "schedule": {
+          "kind": "at",
+          "at": "2026-02-21T10:00:00.000Z"
         },
-        "state": {
-          "nextRunAtMs": 1771607023936,
-          "lastRunAtMs": 1771585423938,
-          "lastStatus": "ok",
-          "lastDurationMs": 16714,
-          "consecutiveErrors": 0
+        "sessionTarget": "main",
+        "wakeMode": "now",
+        "payload": {
+          "kind": "systemEvent",
+          "text": "⏰ RECORDATORIO para Abel: Burofax a Adrián."
         }
       }
     ]
