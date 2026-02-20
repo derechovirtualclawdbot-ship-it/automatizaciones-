@@ -12,4 +12,4 @@ Backup: cada 12 horas
 
 ## Última actualización
 
-2026-02-19T17:00:09.702Z
+2026-02-20T05:00:07.789Z
