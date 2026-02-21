@@ -1,6 +1,6 @@
 {
   "botId": "derechovirtualclawdbotdavid",
-  "timestamp": "2026-02-21T05:00:12.594Z",
+  "timestamp": "2026-02-21T17:00:06.169Z",
   "source": "openclaw-cron-backup",
   "jobs": {
     "version": 1,
@@ -38,7 +38,7 @@
         "name": "Sync Skills (Pull)",
         "enabled": true,
         "createdAtMs": 1771126511666,
-        "updatedAtMs": 1771628579164,
+        "updatedAtMs": 1771671779178,
         "schedule": {
           "kind": "cron",
           "expr": "0 */6 * * *",
@@ -52,10 +52,10 @@
           "text": "🔄 SKILL SYNC: Ejecuta el script de sincronización de skills con los otros agentes. Corre: node /home/node/openclaw/scripts/sync-skills.js y reporta el resultado."
         },
         "state": {
-          "nextRunAtMs": 1771650179153,
-          "lastRunAtMs": 1771628579155,
+          "nextRunAtMs": 1771693379153,
+          "lastRunAtMs": 1771671779160,
           "lastStatus": "ok",
-          "lastDurationMs": 9,
+          "lastDurationMs": 18,
           "consecutiveErrors": 0
         }
       },
@@ -66,7 +66,7 @@
         "name": "Backup Automatizaciones → GitHub",
         "enabled": true,
         "createdAtMs": 1771477083473,
-        "updatedAtMs": 1771606813261,
+        "updatedAtMs": 1771650021059,
         "schedule": {
           "kind": "cron",
           "expr": "0 6,18 * * *",
@@ -79,12 +79,12 @@
           "text": "🔐 BACKUP AUTOMATIZACIONES: Ejecuta el script de backup de cron jobs a GitHub. Corre: node /home/node/openclaw/scripts/backup-automatizaciones.js y reporta el resultado brevemente."
         },
         "state": {
-          "nextRunAtMs": 1771650000000,
-          "lastRunAtMs": 1771606800008,
+          "nextRunAtMs": 1771693200000,
+          "lastRunAtMs": 1771650000004,
           "lastStatus": "ok",
-          "lastDurationMs": 13253,
+          "lastDurationMs": 21055,
           "consecutiveErrors": 0,
-          "runningAtMs": 1771650000003
+          "runningAtMs": 1771693200002
         }
       }
     ]
