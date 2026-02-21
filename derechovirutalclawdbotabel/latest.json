@@ -1,7 +1,7 @@
 {
   "botId": "derechovirutalclawdbotabel",
-  "timestamp": "2026-02-21T11:04:22Z",
-  "source": "cron-backup-automatico",
+  "timestamp": "2026-02-21T23:04:22.000Z",
+  "source": "cron-backup",
   "jobs": {
     "version": 1,
     "jobs": [
@@ -12,7 +12,7 @@
         "name": "Backup Automatizaciones Abel (cada 12h)",
         "enabled": true,
         "createdAtMs": 1771477860172,
-        "updatedAtMs": 1771628698654,
+        "updatedAtMs": 1771671889630,
         "schedule": {
           "kind": "cron",
           "expr": "0 */12 * * *",
@@ -24,6 +24,13 @@
         "payload": {
           "kind": "systemEvent",
           "text": "🔄 BACKUP AUTOMATIZACIONES: Haz backup de las automatizaciones en GitHub. Pasos: 1) Obtén la lista de cron jobs con la herramienta cron (action=list, includeDisabled=true). 2) Guarda el JSON en /home/node/openclaw/temp/automatizaciones/derechovirutalclawdbotabel/latest.json con el formato {botId, timestamp, source, jobs:{version:1,jobs:[...]}}. 3) Copia como backup-YYYY-MM-DD.json. 4) Añade línea al backup-log.md. 5) Ejecuta: cd /home/node/openclaw/temp/automatizaciones && git pull origin main --rebase && git add derechovirutalclawdbotabel/ && git diff --cached --quiet || git commit -m 'backup: derechovirutalclawdbotabel — <timestamp>' && git push origin main. Token ya configurado en remote. Confirma con '✅ Backup completado'."
+        },
+        "state": {
+          "nextRunAtMs": 1771715062566,
+          "lastRunAtMs": 1771671862579,
+          "lastStatus": "ok",
+          "lastDurationMs": 27051,
+          "consecutiveErrors": 0
         }
       },
       {
@@ -32,7 +39,7 @@
         "name": "Sync Skills (Pull)",
         "enabled": true,
         "createdAtMs": 1771127734176,
-        "updatedAtMs": 1771671840006,
+        "updatedAtMs": 1771715036929,
         "schedule": {
           "kind": "cron",
           "expr": "0 */6 * * *",
@@ -44,6 +51,36 @@
         "payload": {
           "kind": "systemEvent",
           "text": "🔄 SYNC SKILLS: Sincroniza skills y credenciales del repo compartido. Ejecuta: cd /home/node/openclaw/sync-repo && git pull origin main && node /home/node/openclaw/scripts/sync-skills.js. Reporta brevemente cuántas skills hay."
+        },
+        "state": {
+          "nextRunAtMs": 1771736623936,
+          "lastRunAtMs": 1771715023939,
+          "lastStatus": "ok",
+          "lastDurationMs": 12990,
+          "consecutiveErrors": 0
+        }
+      },
+      {
+        "id": "f7944c3c-a045-4dbd-b537-f9bc9dd47c71",
+        "agentId": "main",
+        "sessionKey": "agent:main:main",
+        "name": "Recordatorio precio Abogacía de Élite",
+        "enabled": true,
+        "deleteAfterRun": true,
+        "createdAtMs": 1771701534228,
+        "updatedAtMs": 1771701534228,
+        "schedule": {
+          "kind": "at",
+          "at": "2026-02-22T10:30:00.000Z"
+        },
+        "sessionTarget": "main",
+        "wakeMode": "now",
+        "payload": {
+          "kind": "systemEvent",
+          "text": "⏰ RECORDATORIO: Pasarle el precio de Abogacía de Élite a la chica que se reunió contigo y va a capitalizar el paro."
+        },
+        "state": {
+          "nextRunAtMs": 1771756200000
         }
       }
     ]
