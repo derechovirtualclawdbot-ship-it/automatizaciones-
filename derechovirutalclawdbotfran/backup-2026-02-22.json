@@ -1,6 +1,6 @@
 {
   "botId": "derechovirutalclawdbotfran",
-  "timestamp": "2026-02-22T06:00:02.757Z",
+  "timestamp": "2026-02-22T18:00:02.443Z",
   "source": "openclaw-cron-backup",
   "jobs": {
     "version": 1,
@@ -12,7 +12,7 @@
         "name": "Backup Automatizaciones → GitHub (fran)",
         "enabled": true,
         "createdAtMs": 1771478144165,
-        "updatedAtMs": 1771696806521,
+        "updatedAtMs": 1771740007458,
         "schedule": {
           "kind": "cron",
           "expr": "0 6,18 * * *",
@@ -25,12 +25,12 @@
           "text": "🔐 BACKUP AUTOMATIZACIONES FRAN: Ejecuta el script de backup de cron jobs a GitHub. Corre: node /data/.openclaw/workspace/scripts/backup-fran.js y reporta el resultado brevemente."
         },
         "state": {
-          "nextRunAtMs": 1771740000000,
-          "lastRunAtMs": 1771696800009,
+          "nextRunAtMs": 1771783200000,
+          "lastRunAtMs": 1771740000006,
           "lastStatus": "ok",
-          "lastDurationMs": 6512,
+          "lastDurationMs": 7452,
           "consecutiveErrors": 0,
-          "runningAtMs": 1771740000005
+          "runningAtMs": 1771783200005
         }
       },
       {
@@ -40,7 +40,7 @@
         "name": "DV Inactividad WhatsApp",
         "enabled": true,
         "createdAtMs": 1771608506599,
-        "updatedAtMs": 1771668005541,
+        "updatedAtMs": 1771754406025,
         "schedule": {
           "kind": "cron",
           "expr": "0 10 * * *",
@@ -57,12 +57,12 @@
           "mode": "announce"
         },
         "state": {
-          "nextRunAtMs": 1771754400000,
-          "lastRunAtMs": 1771668000013,
+          "nextRunAtMs": 1771840800000,
+          "lastRunAtMs": 1771754400006,
           "lastStatus": "error",
-          "lastDurationMs": 5528,
-          "lastError": "Delivering to WhatsApp requires target <E.164|group JID>",
-          "consecutiveErrors": 1
+          "lastDurationMs": 6019,
+          "consecutiveErrors": 2,
+          "lastError": "Delivering to WhatsApp requires target <E.164|group JID>"
         }
       }
     ]
