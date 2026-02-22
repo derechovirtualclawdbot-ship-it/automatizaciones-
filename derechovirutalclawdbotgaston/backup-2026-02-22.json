@@ -1,6 +1,6 @@
 {
   "botId": "derechovirutalclawdbotgaston",
-  "timestamp": "2026-02-22T00:00:00.000Z",
+  "timestamp": "2026-02-22T12:00:00.000Z",
   "source": "openclaw-cron-backup",
   "jobs": {
     "version": 1,
@@ -43,7 +43,7 @@
         "name": "backup-automatizaciones-12h",
         "enabled": true,
         "createdAtMs": 1771477378133,
-        "updatedAtMs": 1771675313944,
+        "updatedAtMs": 1771718489176,
         "schedule": {
           "kind": "cron",
           "expr": "0 */12 * * *",
@@ -54,19 +54,19 @@
         "wakeMode": "now",
         "payload": {
           "kind": "agentTurn",
-          "message": "[REDACTED - contains sensitive token]",
+          "message": "Tarea de backup de automatizaciones cada 12h:\n\n1. Usa la herramienta `cron` con action=list e includeDisabled=true para obtener todos los jobs actuales.\n2. Construye un JSON con el formato:\n   - botId: 'derechovirutalclawdbotgaston'\n   - timestamp: fecha/hora actual ISO 8601\n   - source: 'openclaw-cron-backup'\n   - jobs: { version: 1, jobs: [...] }\n3. Guarda ese JSON en dos archivos:\n   - `/tmp/automatizaciones-backup/derechovirutalclawdbotgaston/latest.json`\n   - `/tmp/automatizaciones-backup/derechovirutalclawdbotgaston/backup-YYYY-MM-DD.json` (con la fecha real)\n4. Actualiza la tabla del archivo `backup-log.md` en esa misma carpeta con una nueva fila de log.\n5. Ejecuta:\n   - `cd /tmp/automatizaciones-backup`\n   - `git remote set-url origin https://REDACTED_TOKEN@github.com/derechovirtualclawdbot-ship-it/automatizaciones-`\n   - `git add derechovirutalclawdbotgaston/`\n   - `git commit -m 'backup: derechovirutalclawdbotgaston FECHA'`\n   - `git push origin main`\n6. Reporta si el backup fue exitoso o si hubo algún error.",
           "timeoutSeconds": 300
         },
         "delivery": {
           "mode": "announce"
         },
         "state": {
-          "nextRunAtMs": 1771718423362,
-          "lastRunAtMs": 1771675223369,
-          "lastStatus": "error",
-          "lastDurationMs": 90575,
-          "consecutiveErrors": 1,
-          "runningAtMs": 1771718423378
+          "nextRunAtMs": 1771761623362,
+          "lastRunAtMs": 1771718423378,
+          "lastStatus": "ok",
+          "lastDurationMs": 65798,
+          "consecutiveErrors": 0,
+          "runningAtMs": 1771761623367
         }
       }
     ]
